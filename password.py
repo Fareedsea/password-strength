@@ -61,6 +61,7 @@ st.title("Password Strength Checker")
 # Get user input for password
 password = st.text_input("Enter your password:", type="password")
 
+# Button to check password strength
 if st.button("Check Password"):
     if password:
         results = check_password_strength(password)
@@ -68,3 +69,8 @@ if st.button("Check Password"):
             st.write(result)
     else:
         st.write("Please enter a password.")
+
+# Additional button to generate a strong password
+if st.button("Generate Strong Password"):
+    strong_password = generate_strong_password()
+    st.write("Your new strong password is:", strong_password)
